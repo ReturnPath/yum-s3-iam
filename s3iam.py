@@ -137,7 +137,7 @@ class S3Repository(YumRepository):
             if 'cn-north-1' in region:
                 self.baseurl = "https://s3.cn-north-1.amazonaws.com.cn/%s%s" % (bucket, path)
         else:
-            self.baseurl = "https://%s.s3.amazonaws.com%s" % (bucket, path)
+            self.baseurl = "https://s3.amazonaws.com/%s/%s" % (bucket, path)
 
         self.name = repo.name
         self.region = repo.region if repo.region else region
